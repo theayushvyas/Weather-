@@ -13,29 +13,27 @@ class App extends Component {
     super(props);
     
     this.state = {
-      cityWeather: null,
+      Weather: [],
     }
   }
 
   componentDidMount() {
-    axios.post('http://api.openweathermap.org/data/2.5/weather?q=gwalior&units=metric&appid='+ApiKey)
-            .then( (weatherData) => {
-                console.log(weatherData);
+    axios.get('https://api.openweathermap.org/data/2.5/weather?q=gwalior&units=metric&appid='+ApiKey)
+            .then( (response) => {
+                console.log(response);
                 const data={
-                    cloudiness:weatherData.weather[0].description,
-                    lat:weatherData.coord.lat,
-                    lon:weatherData.coord.lon,
-                    icon:weatherData.weather[0].icon,
-                    sunrise:new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString(),
-                    sunset:new Date(weatherData.sys.sunset * 1000).toLocaleTimeString(),
-                    humidity:weatherData.main.humidity,
-                    currentTemp:weatherData.main.temp,
-                    pressure:weatherData.main.pressure,
-                    wind:weatherData.wind.speed,
-                    cityName:`${weatherData.name},${weatherData.sys.country}`,
+                    cloudiness:response.data.weather[0].description,
+                    sunrise:new Date(response.data.sys.sunrise * 1000).toLocaleTimeString(),
+                    sunset:new Date(response.data.sys.sunset * 1000).toLocaleTimeString(),
+                    humidity:response.data.main.humidity,
+                    currentTemp:response.data.main.temp,
+                    pressure:response.data.main.pressure,
+                    wind:response.data.wind.speed,
+                    cityName:response.data.name,
                     // date:moment().format("DD MMM YYYY") 
                   }
-                  this.setState(()=>({cityWeather:data}));
+                  console.log(response.data.weather[0].description);
+                  this.setState(()=>({Weather:data}));
             }
             ).catch( err => {console.log(err)}) 
   }
@@ -46,8 +44,7 @@ class App extends Component {
         <div className="main">
           <div className="container">
             <div className="title_container">
-              <p>{this.state.ApiData}</p>
-              <Titles />
+              <Titles w = {this.state.Weather} />
             </div>
             <div className="form_container">
               <Form />
