@@ -26,7 +26,6 @@ class Form extends Component {
         e.preventDefault();
         axios.get('https://api.openweathermap.org/data/2.5/weather?q='+this.state.InputData+'&units=metric&appid='+ApiKey)
                 .then( (response) => {
-                    console.log(response);
                     const data={
                         cloudiness:response.data.weather[0].description,
                         sunrise:new Date(response.data.sys.sunrise * 1000).toLocaleTimeString(),
