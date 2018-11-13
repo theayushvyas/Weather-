@@ -1,9 +1,9 @@
 .form_container {
-    height: 90vh;
+    height: 100vh;
     background-color: #0a2333; 
-    padding-left: 30px;
+    padding-left: 0px;
     display: flex;
-    width: 50%;
+    width: 60%;
   }
 
 input[type='text'] {
@@ -14,10 +14,10 @@ input[type='text'] {
     float: left;
     justify-content: center;
     text-align: center;
-    color: rgb(97, 93, 93);
+    color: rgb(207, 203, 203);
     letter-spacing: 2px;
     margin-bottom: 30px;
-    /* margin-right: 10px; */
+    margin-top: 20px;
     font-size: 20px;
     border: none;
     border-bottom: solid 1px #b44a3e;
@@ -26,9 +26,7 @@ input[type='text'] {
   }
   
   .form_container_div {
-    margin-top: 20%;
     width: 100%;
-    display: inline;
   }
   
   button {
@@ -43,36 +41,34 @@ input[type='text'] {
     background-color: #49aee9;
     color: #fff;
     font-weight: 100;
+    margin-top: 20px;
   }
   
   button:active {
     outline: none;
   }
 
-@media(max-width: 700px) {
-    .form_container{
-        height: 80vh;
-    }
-    input[type='text'] {
-        width: 90%;
-        font-size: 15px;
-    }
-
-    button {
-        margin: 0;
-    }
-}
-
-@media(max-width: 700px) {
+@media(max-width: 800px) {
   .form_container {
-    height: 50vh;
-    width: 83.5vw;
+    height: 100%;
+    width: 90vw;
   }
 
+  input[type='text'] {
+    width: 100%;
+    font-size: 15px;
+    margin-top: 0;
+}
+
+  button {
+    margin-bottom: 20px;
+    margin-top: 0px;
+  }
   input[type='text'] {
     margin-bottom: 20px;
   }
   .form_container_div {
     margin-top: 10px;
+    height: max-content;
   }
 }

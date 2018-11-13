@@ -1,0 +1,53 @@
+.Weathercontainer {
+    background-color: #0a2333; 
+    height: min-content;
+    width: 90%;
+    display: grid;
+    color: white;
+    margin-left: 5%;
+}
+
+.MainInfo h1 {
+    font-size: 60px;
+    margin: 0;
+}
+
+.MainInfo h1 span {
+    font-size: 20px;
+    position: relative;
+    bottom: 3.4vh;
+}
+
+.MainInfo {
+    width: 100%;
+}
+
+.MainInfo p {
+    width: 45%;
+    padding-left: 20px;
+    float: left;
+    padding-top: 20px;
+}
+
+#condition {
+    position: relative;
+    bottom: 0;
+    font-size: 30px;
+}
+
+@media(max-width: 800px) {
+    .MainInfo p {
+        width: 100%;
+        padding-top: 10px;
+        float: right;
+    }
+}
+
+@media(max-width: 400px) {
+    .MainInfo p {
+        margin: 10px;
+    }
+    .MainInfo h1 {
+        font-size: 50px;
+    }
+}
