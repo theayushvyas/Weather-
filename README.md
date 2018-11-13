@@ -1,8 +1,20 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was Reactjs with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install`
+
+And for then, go to [openweathermap](https://openweathermap.org/api) and get Api key.
+After getting Api key create `.env` file in `Root` directory of your project.
+In `.env` file write `REACT_APP_APIKEY = [Place you Api key here]`.
+
+`The above told process is MacOS specific, I'm not sure it will work in anyother OS so find rught method for your environment`.
+
+If you have completed above process then you are good to go.
+
+Just run:
 
 ### `npm start`
 
