@@ -48,6 +48,12 @@ input[type='text'] {
     outline: none;
   }
 
+  #error {
+    color: red;
+    margin: 10%;
+    padding: 0;
+  }
+
 @media(max-width: 800px) {
   .form_container {
     height: 100%;

@@ -48,15 +48,9 @@ class Form extends Component {
       }
 
     render() {
-        let style = {
-            float: 'left',
-            margin: '20%',
-            padding: '7%',
-            color: 'red',
-        }
         let showWeather;
         if(this.state.problem) {
-            showWeather = <p style={style}>Something went wrong please check your internet connection or make sure you have entered city name correctly</p>
+            showWeather = <p id='error'>Something went wrong.</p>
         }else {
             if(this.state.Weather.currentTemp !== undefined) {
                 showWeather  = <Weather passedData = {this.state.Weather} error = {this.state.problem} />
